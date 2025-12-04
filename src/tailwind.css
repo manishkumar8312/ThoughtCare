@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-soft-pink via-soft-purple to-soft-blue min-h-screen;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/20 backdrop-blur-md rounded-2xl border border-white/30 shadow-lg;
+  }
+  
+  .pastel-button {
+    @apply bg-gradient-to-r from-pastel-pink to-pastel-purple text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transition-all duration-300 hover:scale-105;
+  }
+  
+  .mood-emoji {
+    @apply text-4xl cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-12;
+  }
+}
