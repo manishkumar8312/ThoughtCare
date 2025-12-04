@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Mental Wellness Web App 🧘‍♀️
 
 A comprehensive mental health tracking and wellness application built with React, Vite, and modern web technologies.
@@ -189,4 +188,3 @@ If you or someone you know is in crisis, please reach out to:
 Made with ❤️ for your mental wellness journey
 =======
 # ThoughtCare
->>>>>>> 47266785636240a02d62e822aaa790377f70b993
