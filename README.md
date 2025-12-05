@@ -1,108 +1,100 @@
-# Mental Wellness Web App 🧘‍♀️
+# ThoughtCare – Mental Wellness Web Application
 
-A comprehensive mental health tracking and wellness application built with React, Vite, and modern web technologies.
+ThoughtCare is a comprehensive mental health tracking and wellness application built using React, Vite, and modern web technologies. It enables users to monitor their emotional well-being, practice guided meditation, journal their thoughts, and access mental health resources in a private and secure environment.
 
-## 🌟 Features
+---
 
-- **Mood Tracking**: Track your daily emotions with emoji-based mood selector
-- **Journaling**: Rich text journal editor with React Quill for expressive writing
-- **Meditation**: Guided meditation sessions with breathing animations and timers
-- **AI Support Chat**: Interactive chat interface for mental health support
-- **Resources**: Curated articles, videos, and techniques for mental wellness
-- **Data Visualization**: Mood history charts and trends using Recharts
-- **Local Storage**: All data stored locally for privacy and security
+## Features
 
-## 🛠️ Tech Stack
+* **Mood Tracking**: Daily emotion tracking with an intuitive mood selection interface
+* **Journaling**: Rich-text journal editor powered by React Quill
+* **Meditation Module**: Guided meditation sessions with breathing animations, timers, and configurable modes
+* **AI Support Chat**: Interactive chat system designed to assist users with mental health support
+* **Resource Library**: Curated articles, videos, and self-help techniques
+* **Data Visualization**: Mood history trends and insights using Recharts
+* **Local Storage**: All user data stored locally for maximum privacy
 
-- **Frontend**: React 18 + Vite
-- **Styling**: TailwindCSS with custom pastel theme
-- **Animations**: Framer Motion
-- **Charts**: Recharts for mood visualization
-- **Rich Text**: React Quill for journaling
-- **Routing**: React Router DOM
-- **State Management**: Context API + LocalStorage
-- **Icons**: Lucide React
+---
 
-## 📦 Installation
+## Technology Stack
+
+* **Frontend**: React 18 with Vite
+* **Styling**: TailwindCSS (custom pastel theme)
+* **Animations**: Framer Motion
+* **Charts**: Recharts
+* **Text Editing**: React Quill
+* **Routing**: React Router DOM
+* **State Management**: Context API with LocalStorage
+* **Icons**: Lucide React
+
+---
+
+## Installation
 
 ### Prerequisites
 
-- Node.js (v16 or higher)
-- npm or yarn
-- Clerk account (for authentication)
+* Node.js (version 16 or above)
+* npm or yarn
+* Clerk account for authentication
 
 ### Clerk Setup
 
-1. **Create a Clerk Account**:
-   - Go to [Clerk Dashboard](https://dashboard.clerk.com)
-   - Sign up for a free account
+1. Create a Clerk account at the Clerk Dashboard
+2. Add a new application
+3. Retrieve your **Publishable Key** (starts with `pk_test_`)
+4. Add it to your environment variables
 
-2. **Create a New Application**:
-   - Click "Add application" 
-   - Give it a name (e.g., "MindfulMe")
-   - Choose your authentication methods (email, social providers, etc.)
+Example `.env` configuration:
 
-3. **Get Your Keys**:
-   - Navigate to your application dashboard
-   - Copy the **Publishable Key** (starts with `pk_test_` for development)
-   - Keep the **Secret Key** for server-side use if needed
+```bash
+VITE_CLERK_PUBLISHABLE_KEY=pk_test_your_publishable_key_here
+```
 
-4. **Configure Environment Variables**:
-   ```bash
-   # Copy the example file
-   cp .env.example .env
-   
-   # Edit .env and add your Clerk Publishable Key
-   VITE_CLERK_PUBLISHABLE_KEY=pk_test_your_publishable_key_here
-   ```
+---
 
-### App Setup
+## Application Setup
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
-cd mental-wellness-app
+cd thoughtcare
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
-3. Configure environment variables:
-   - Copy `.env.example` to `.env`
-   - Add your Clerk Publishable Key from the dashboard
+3. Add your Clerk Publishable Key in the `.env` file
 
 4. Start the development server:
+
 ```bash
 npm run dev
 ```
 
-5. Open your browser and navigate to `http://localhost:5173`
+Access the app at `http://localhost:5173`.
 
-### Authentication Flow
+---
 
-- **Unauthenticated users** are redirected to `/sign-in`
-- **New users** can sign up at `/sign-up`
-- **Authenticated users** can access all app features
-- **Sign out** option available in the navigation bar
+## Authentication Flow
 
-## 🚀 Available Scripts
+* Unauthenticated users are redirected to the sign-in page
+* New users may register via the sign-up page
+* Authenticated users gain full access to all features
+* Sign-out option is available in the navigation bar
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
+---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
-mental-wellness-app/
+thoughtcare/
 ├── public/
-│   ├── index.html
-│   └── assets/
 ├── src/
-│   ├── components/          # Reusable UI components
+│   ├── components/
 │   │   ├── Navbar.jsx
 │   │   ├── Footer.jsx
 │   │   ├── MoodSelector.jsx
@@ -112,79 +104,73 @@ mental-wellness-app/
 │   │   ├── BreathingAnimation.jsx
 │   │   ├── ChatBubble.jsx
 │   │   └── ChatInput.jsx
-│   ├── pages/              # Page components
+│   ├── pages/
 │   │   ├── Home.jsx
 │   │   ├── MoodTracker.jsx
 │   │   ├── Journal.jsx
 │   │   ├── Meditation.jsx
 │   │   ├── Chat.jsx
 │   │   └── Resources.jsx
-│   ├── context/            # Global state management
-│   │   └── AppContext.jsx
-│   ├── hooks/              # Custom React hooks
-│   │   ├── useLocalStorage.js
-│   │   └── useMeditation.js
-│   ├── services/           # API and business logic
-│   │   ├── aiService.js
-│   │   └── moodService.js
-│   ├── utils/              # Utility functions
-│   │   ├── constants.js
-│   │   └── helpers.js
-│   ├── router/             # React Router configuration
-│   │   └── AppRouter.jsx
-│   ├── App.jsx             # Main app component
-│   └── main.jsx            # Entry point
+│   ├── context/
+│   ├── hooks/
+│   ├── services/
+│   ├── utils/
+│   ├── router/
+│   ├── App.jsx
+│   └── main.jsx
 ├── package.json
 ├── tailwind.config.js
 ├── vite.config.js
 └── README.md
 ```
 
-## 🎨 Design Features
+---
 
-- **Soft Pastel Color Theme**: Calming colors designed for mental wellness
-- **Responsive Design**: Works seamlessly on desktop and mobile devices
-- **Smooth Animations**: Framer Motion animations for enhanced user experience
-- **Glass Morphism**: Modern UI with frosted glass effects
-- **Accessibility**: Semantic HTML and ARIA labels for screen readers
+## Design Principles
 
-## 💾 Data Storage
-
-All user data is stored locally in the browser using localStorage:
-- Mood entries with timestamps and notes
-- Journal entries with rich text content
-- Chat history with AI support
-- Meditation session records
-- App preferences and settings
-
-## 🔒 Privacy & Security
-
-- No external API calls for data storage
-- All data remains on user's device
-- No tracking or analytics
-- Complete privacy for sensitive mental health data
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🆘 Support
-
-If you or someone you know is in crisis, please reach out to:
-- **Crisis Hotline**: 988 (US)
-- **Crisis Text Line**: Text HOME to 741741
-- **Emergency Services**: 911
+* Soft, neutral pastel color palette for a calming user experience
+* Fully responsive UI, optimized for mobile and desktop
+* Smooth, meaningful animations with Framer Motion
+* Glass-morphism elements for a modern interface
+* Accessibility-oriented semantics and ARIA support
 
 ---
 
-Made with ❤️ for your mental wellness journey
-=======
-# ThoughtCare
+## Data Storage and Privacy
+
+* All data is stored in the user's browser via LocalStorage
+* No external storage or tracking systems are used
+* No analytics, ensuring full privacy for sensitive mental health information
+* Mood entries, journals, chat history, and meditation data remain fully local
+
+---
+
+## Available Scripts
+
+* `npm run dev` – Start the development server
+* `npm run build` – Create a production build
+* `npm run preview` – Preview the production build
+* `npm run lint` – Run code linting
+
+---
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push the branch
+5. Submit a pull request
+
+---
+
+## License
+
+Licensed under the MIT License. Refer to the LICENSE file for details.
+
+---
+
+## Support Disclaimer
+
+ThoughtCare is a wellness tool and not a substitute for professional medical treatment. In case of any emergency, users are encouraged to contact appropriate local support services.
+
