@@ -5,7 +5,9 @@ import { Brain, TrendingUp, Calendar, Heart } from 'lucide-react'
 
 const MoodTracker = () => {
   return (
-    <div className="space-y-8">
+    /* Direct container — NO outer flex wrapper */
+    <div className="max-w-6xl w-full mx-auto px-4 pt-24 space-y-12">
+
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -19,8 +21,9 @@ const MoodTracker = () => {
             Mood Tracker
           </h1>
         </div>
+
         <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-          Track your emotional patterns and gain insights into your mental wellbeing. 
+          Track your emotional patterns and gain insights into your mental wellbeing.
           Regular mood tracking helps you identify triggers and patterns.
         </p>
       </motion.div>
@@ -54,49 +57,60 @@ const MoodTracker = () => {
           <TrendingUp className="w-6 h-6 text-pastel-green" />
           <h3 className="text-xl font-bold text-gray-800">Tips for Better Mood Tracking</h3>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
           <div className="flex items-start space-x-3">
-            <div className="w-8 h-8 rounded-full bg-pastel-purple flex items-center justify-center flex-shrink-0">
+            <div className="w-8 h-8 rounded-full bg-pastel-purple flex items-center justify-center">
               <Calendar className="w-4 h-4 text-white" />
             </div>
             <div>
               <h4 className="font-medium text-gray-800">Be Consistent</h4>
-              <p className="text-sm text-gray-600">Try to track your mood at the same time each day for better patterns.</p>
+              <p className="text-sm text-gray-600">
+                Try to track your mood at the same time each day for better patterns.
+              </p>
             </div>
           </div>
-          
+
           <div className="flex items-start space-x-3">
-            <div className="w-8 h-8 rounded-full bg-pastel-blue flex items-center justify-center flex-shrink-0">
+            <div className="w-8 h-8 rounded-full bg-pastel-blue flex items-center justify-center">
               <Brain className="w-4 h-4 text-white" />
             </div>
             <div>
               <h4 className="font-medium text-gray-800">Add Context</h4>
-              <p className="text-sm text-gray-600">Include notes about what influenced your mood for deeper insights.</p>
+              <p className="text-sm text-gray-600">
+                Include notes about what influenced your mood for deeper insights.
+              </p>
             </div>
           </div>
-          
+
           <div className="flex items-start space-x-3">
-            <div className="w-8 h-8 rounded-full bg-pastel-green flex items-center justify-center flex-shrink-0">
+            <div className="w-8 h-8 rounded-full bg-pastel-green flex items-center justify-center">
               <TrendingUp className="w-4 h-4 text-white" />
             </div>
             <div>
               <h4 className="font-medium text-gray-800">Review Regularly</h4>
-              <p className="text-sm text-gray-600">Check your weekly trends to understand your emotional patterns better.</p>
+              <p className="text-sm text-gray-600">
+                Check your weekly trends to understand your emotional patterns better.
+              </p>
             </div>
           </div>
-          
+
           <div className="flex items-start space-x-3">
-            <div className="w-8 h-8 rounded-full bg-pastel-pink flex items-center justify-center flex-shrink-0">
+            <div className="w-8 h-8 rounded-full bg-pastel-pink flex items-center justify-center">
               <Heart className="w-4 h-4 text-white" />
             </div>
             <div>
               <h4 className="font-medium text-gray-800">Be Honest</h4>
-              <p className="text-sm text-gray-600">Record your true feelings - this data is for your personal growth.</p>
+              <p className="text-sm text-gray-600">
+                Record your true feelings — this data is for your personal growth.
+              </p>
             </div>
           </div>
+
         </div>
       </motion.div>
+
     </div>
   )
 }

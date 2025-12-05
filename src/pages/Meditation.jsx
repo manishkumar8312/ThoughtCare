@@ -5,7 +5,11 @@ import { Headphones, Wind, Sparkles, Timer } from 'lucide-react'
 
 const Meditation = () => {
   return (
-    <div className="space-y-8">
+    /* PAGE WRAPPER → forces true centering */
+    <div className="w-full flex justify-center pt-20">
+
+      {/* CENTERED CONTENT CONTAINER */}
+      <div className="max-w-6xl w-full px-4 space-y-12">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -144,6 +148,8 @@ const Meditation = () => {
           </div>
         </div>
       </motion.div>
+
+      </div>
     </div>
   )
 }

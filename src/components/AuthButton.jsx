@@ -1,52 +1,52 @@
-import { useAuth, useUser } from '@clerk/clerk-react'
+import { useAuth } from '@clerk/clerk-react'
+import { SignInButton, SignUpButton, UserButton } from '@clerk/clerk-react'
 import { motion } from 'framer-motion'
-import { User, LogOut, Heart } from 'lucide-react'
 
-const AuthButton = () => {
-  const { isSignedIn, signOut } = useAuth()
-  const { user } = useUser()
+const AuthButton = ({ isMobile = false }) => {
+  const { isSignedIn } = useAuth()
+
+  const buttonClasses = isMobile
+    ? "px-6 py-3 rounded-full text-lg font-medium"
+    : "px-4 py-2 rounded-full text-sm font-medium"
+
+  const signInButtonClasses = `${buttonClasses} border border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white transition-all duration-300`
+  const signUpButtonClasses = `${buttonClasses} bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 transition-all duration-300`
 
   if (!isSignedIn) {
     return (
-      <div className="flex items-center space-x-3">
-        <motion.a
-          href="/sign-in"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="px-4 py-2 rounded-full border border-pastel-purple text-pastel-purple hover:bg-pastel-purple hover:text-white transition-colors duration-300 font-medium"
-        >
-          Sign In
-        </motion.a>
-        <motion.a
-          href="/sign-up"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="px-4 py-2 rounded-full bg-gradient-to-r from-pastel-pink to-pastel-purple text-white font-medium"
-        >
-          Sign Up
-        </motion.a>
+      <div className="flex items-center gap-2">
+        <SignInButton mode="modal" redirectUrl="/">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className={signInButtonClasses}
+          >
+            Login
+          </motion.button>
+        </SignInButton>
+        <SignUpButton mode="modal" redirectUrl="/">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className={signUpButtonClasses}
+          >
+            Sign Up
+          </motion.button>
+        </SignUpButton>
       </div>
     )
   }
 
   return (
-    <div className="flex items-center space-x-3">
-      <div className="flex items-center space-x-2 px-3 py-2 bg-white/20 rounded-full backdrop-blur-sm">
-        <User className="w-4 h-4 text-pastel-purple" />
-        <span className="text-sm text-gray-700">
-          {user?.firstName || user?.username || 'User'}
-        </span>
-      </div>
-      <motion.button
-        onClick={() => signOut()}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="flex items-center space-x-2 px-4 py-2 rounded-full border border-pastel-pink text-pastel-pink hover:bg-pastel-pink hover:text-white transition-colors duration-300 font-medium"
-      >
-        <LogOut className="w-4 h-4" />
-        <span>Sign Out</span>
-      </motion.button>
-    </div>
+    <UserButton 
+      appearance={{
+        elements: {
+          avatarBox: "w-8 h-8",
+          userButtonPopoverCard: "shadow-lg border border-gray-200",
+          userButtonPopoverActions: "flex flex-col"
+        }
+      }}
+    />
   )
 }
 
