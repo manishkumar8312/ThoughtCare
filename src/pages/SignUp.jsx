@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { SignUp as ClerkSignUp } from '@clerk/clerk-react'
-import { User, Sparkles, Shield } from 'lucide-react'
+import { User, Users, Sparkles, Shield } from 'lucide-react'
 
 const SignUp = () => {
   return (
