@@ -1,7 +1,7 @@
 # ThoughtCare – Mental Wellness Web Application
 
 ThoughtCare is a comprehensive mental health tracking and wellness application built using React, Vite, and modern web technologies. It enables users to monitor their emotional well-being, practice guided meditation, journal their thoughts, and access mental health resources in a private and secure environment.
-
+<p align="left"> <img src="https://skillicons.dev/icons?i=react" height="45" /> <img src="https://skillicons.dev/icons?i=vite" height="45" /> <img src="https://skillicons.dev/icons?i=tailwind" height="45" /> <img src="https://skillicons.dev/icons?i=js" height="45" />  <img src="https://skillicons.dev/icons?i=git" height="45" /> <img src="https://skillicons.dev/icons?i=github" height="45" /></p>
 ---
 
 ## Features
