@@ -19,7 +19,7 @@ const Meditation = () => {
       >
         <div className="flex items-center justify-center space-x-3">
           <Headphones className="w-8 h-8 text-pastel-green" />
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-pastel-green to-pastel-yellow bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-green-600 to-yellow-600 bg-clip-text text-transparent">
             Meditation & Mindfulness
           </h1>
         </div>
@@ -51,7 +51,7 @@ const Meditation = () => {
             
             <div className="mt-6 text-center text-sm text-gray-600">
               <p>Follow the circle's rhythm</p>
-              <p className="mt-1">4-4-4-4 breathing pattern</p>
+              <p className="mt-1">4-4-4 breathing pattern</p>
             </div>
           </div>
         </motion.div>

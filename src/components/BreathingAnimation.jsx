@@ -1,91 +1,107 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
-const BreathingAnimation = ({ isActive, phase }) => {
+const BreathingAnimation = ({ duration = 4 }) => {
+  const [isActive, setIsActive] = useState(false);
+  const [phase, setPhase] = useState("inhale");
+  const [timeLeft, setTimeLeft] = useState(duration);
 
-  const getScale = () => {
-    if (!isActive) return 1;
-
-    switch (phase) {
-      case "inhale":
-        return 1.5;
-      case "hold":
-        return 1.5;
-      case "exhale":
-        return 1;
-      default:
-        return 1;
+  // Toggle breathing on circle click
+  const toggleBreathing = () => {
+    setIsActive((prev) => !prev);
+    if (!isActive) {
+      setPhase("inhale");
+      setTimeLeft(duration);
     }
   };
 
-  return (
-    <div className="flex items-center justify-center">
-      <div className="relative">
+  // Timer logic
+  useEffect(() => {
+    if (!isActive) {
+      setTimeLeft(duration);
+      return;
+    }
 
-        {/* Outer Glow Animation */}
+    setTimeLeft(duration);
+
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => Math.max(prev - 1, 0));
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [phase, isActive, duration]);
+
+  // Phase switching
+  useEffect(() => {
+    if (!isActive) return;
+
+    const phases = ["inhale", "hold", "exhale"];
+    let index = 0;
+
+    const interval = setInterval(() => {
+      index = (index + 1) % phases.length;
+      setPhase(phases[index]);
+    }, duration * 1000);
+
+    return () => clearInterval(interval);
+  }, [isActive, duration]);
+
+  const getScale = () => {
+    if (!isActive) return 1;
+    return phase === "exhale" ? 1 : 1.4; // smaller scale
+  };
+
+  const getLabel = () => {
+    if (!isActive) return "Tap to Breathe";
+    if (phase === "inhale") return "Breathe In";
+    if (phase === "hold") return "Hold";
+    return "Breathe Out";
+  };
+
+  return (
+    <div className="flex items-center justify-center min-h-[300px]">
+      <div className="relative cursor-pointer" onClick={toggleBreathing}>
+
+        {/* Outer Glow */}
         <motion.div
           animate={{
             scale: isActive ? [1, 1.2, 1] : 1,
-            opacity: isActive ? [0.3, 0.7, 0.3] : 0.3
+            opacity: isActive ? [0.3, 0.6, 0.3] : 0.2
           }}
           transition={{
-            duration: 4,
+            duration,
             repeat: isActive ? Infinity : 0,
             ease: "easeInOut"
           }}
-          className="absolute inset-0 w-64 h-64 rounded-full blur-3xl 
-          bg-gradient-to-r from-pastel-purple to-pastel-blue"
+          className="absolute inset-0 w-48 h-48 rounded-full blur-2xl
+          bg-gradient-to-r from-purple-300 to-blue-300"
         />
 
         {/* Main Circle */}
         <motion.div
           animate={{ scale: getScale() }}
           transition={{ duration: 1, ease: "easeInOut" }}
-          className="relative w-64 h-64 rounded-full shadow-2xl
-          bg-gradient-to-r from-pastel-purple to-pastel-blue 
+          className="relative w-48 h-48 rounded-full shadow-xl
+          bg-gradient-to-br from-purple-400 to-blue-300 
           flex items-center justify-center"
         >
-          {/* Inner white circle */}
-          <div className="w-48 h-48 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center">
-            <div className="text-center text-white">
-              <p className="text-2xl font-light mb-2">
-                {phase === "inhale"
-                  ? "Breathe In"
-                  : phase === "hold"
-                  ? "Hold"
-                  : "Breathe Out"}
-              </p>
+          {/* Inner Glass */}
+          <div className="w-36 h-36 bg-white/20 backdrop-blur-sm rounded-full flex flex-col items-center justify-center text-white">
+            <p className="text-lg font-light">{getLabel()}</p>
 
-              <p className="text-lg opacity-80">4 seconds</p>
-            </div>
+            {isActive && (
+              <motion.p
+                key={timeLeft}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3 }}
+                className="text-xl font-semibold"
+              >
+                {timeLeft}s
+              </motion.p>
+            )}
           </div>
         </motion.div>
-
-        {/* Floating Particles */}
-        {isActive &&
-          [...Array(6)].map((_, i) => (
-            <motion.div
-              key={i}
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{
-                scale: [0, 1, 0],
-                opacity: [0, 0.6, 0],
-                y: [-20, -120, -20],
-                x: [0, Math.cos(i * 60) * 60, 0]
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                delay: i * 0.5,
-                ease: "easeInOut"
-              }}
-              className="absolute w-4 h-4 bg-pastel-yellow rounded-full"
-              style={{
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)"
-              }}
-            />
-          ))}
       </div>
     </div>
   );

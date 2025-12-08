@@ -48,7 +48,7 @@ const Navbar = () => {
         <img
           src="/src/assets/logo.png"
           alt="ThoughtCare Logo"
-          className={`transition-all duration-500 ${isScrolled ? "w-7 h-7" : "w-9 h-9"}`}
+          className={`transition-all duration-500 rounded-full ${isScrolled ? "w-7 h-7" : "w-9 h-9"}`}
         />
         <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
           ThoughtCare
@@ -143,7 +143,7 @@ const Navbar = () => {
           onClick={() => setIsMenuOpen(false)}
           className="flex items-center gap-2 text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent"
         >
-          <img src="/src/assets/logo.png" className="w-9 h-9" />
+          <img src="/src/assets/logo.png" className="w-9 h-9 rounded-full" />
           ThoughtCare
         </Link>
 

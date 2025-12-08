@@ -156,7 +156,7 @@ const MeditationTimer = () => {
         {!isRunning ? (
           <button
             onClick={handleStart}
-            className="pastel-button inline-flex items-center space-x-2"
+            className="px-6 py-3 rounded-xl bg-gradient-to-r from-green-500 to-green-600 text-white font-medium hover:shadow-lg transition-all duration-300 hover:scale-105 inline-flex items-center space-x-2"
           >
             <Play className="w-5 h-5" />
             <span>Start</span>
@@ -164,7 +164,7 @@ const MeditationTimer = () => {
         ) : (
           <button
             onClick={handlePause}
-            className="px-6 py-3 rounded-xl bg-gradient-to-r from-pastel-yellow to-pastel-pink text-white font-medium hover:shadow-lg transition-all duration-300 hover:scale-105 inline-flex items-center space-x-2"
+            className="px-6 py-3 rounded-xl bg-gradient-to-r from-red-500 to-red-600 text-white font-medium hover:shadow-lg transition-all duration-300 hover:scale-105 inline-flex items-center space-x-2"
           >
             <Pause className="w-5 h-5" />
             <span>Pause</span>

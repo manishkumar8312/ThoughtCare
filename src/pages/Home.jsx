@@ -9,28 +9,28 @@ const Home = () => {
       title: 'Mood Tracking',
       description: 'Track your emotional patterns and gain insights into your mental wellbeing',
       link: '/mood-tracker',
-      color: 'from-pastel-purple to-pastel-blue'
+      color: 'from-pastel-pink to-pastel-purple'
     },
     {
       icon: BookOpen,
       title: 'Digital Journal',
       description: 'Express your thoughts and feelings in a private, secure journal',
       link: '/journal',
-      color: 'from-pastel-blue to-pastel-green'
+      color: 'from-pastel-pink to-pastel-purple'
     },
     {
       icon: Headphones,
       title: 'Meditation',
       description: 'Guided meditation sessions and breathing exercises for relaxation',
       link: '/meditation',
-      color: 'from-pastel-green to-pastel-yellow'
+      color: 'from-pastel-pink to-pastel-purple'
     },
     {
       icon: MessageCircle,
       title: 'AI Support',
       description: 'Chat with our AI companion for emotional support and guidance',
       link: '/chat',
-      color: 'from-pastel-yellow to-pastel-pink'
+      color: 'from-pastel-pink to-pastel-purple'
     },
     {
       icon: Library,
@@ -60,10 +60,29 @@ const Home = () => {
             <Sparkles className="w-8 h-8 text-pastel-yellow" />
           </motion.div>
 
-          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-pastel-pink via-pastel-purple to-pastel-blue bg-clip-text text-transparent">
+          <h1
+            className="
+              text-5xl md:text-7xl font-extrabold 
+              bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 
+              bg-clip-text text-transparent
+              drop-shadow-[0_2px_10px_rgba(0,0,0,0.2)]
+            "
+          >
             Welcome to MindfulMe
           </h1>
+
+
         </div>
+
+        {/* ⭐ ADDED IMAGE BELOW TITLE */}
+        <motion.img
+          src="/src/assets/humanBrain.avif"
+          alt="Mindful Brain"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="w-[280px] md:w-[380px] rounded-2xl shadow-xl object-cover border-[3px] border-white/50"
+        />
 
         <p className="text-xl md:text-2xl text-gray-700 max-w-3xl leading-relaxed">
           Your personal mental wellness companion. Track your mood, journal your thoughts,
@@ -71,7 +90,7 @@ const Home = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link to="/mood-tracker" className="pastel-button inline-flex items-center space-x-2">
+          <Link to="/mood-tracker" className="pastel-button inline-flex text-black items-center space-x-2">
             <span>Start Your Journey</span>
             <ArrowRight className="w-5 h-5" />
           </Link>
@@ -84,6 +103,7 @@ const Home = () => {
           </Link>
         </div>
       </motion.section>
+
 
       {/* Features Grid */}
       <motion.section

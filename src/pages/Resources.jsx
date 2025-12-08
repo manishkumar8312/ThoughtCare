@@ -50,7 +50,7 @@ const Resources = () => {
       >
         <div className="flex items-center justify-center space-x-3">
           <BookOpen className="w-8 h-8 text-pastel-purple" />
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-pastel-purple to-pastel-pink bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
             Mental Health Resources
           </h1>
         </div>

@@ -3,14 +3,14 @@ import { motion } from 'framer-motion'
 import { useAppContext } from '../context/AppContext.jsx'
 
 const moods = [
-  { label: 'Happy', color: 'bg-yellow-200', icon: '☀' },
-  { label: 'Calm', color: 'bg-blue-200', icon: '〜' },
-  { label: 'Sad', color: 'bg-gray-200', icon: '•' },
-  { label: 'Anxious', color: 'bg-purple-200', icon: '!' },
-  { label: 'Angry', color: 'bg-red-200', icon: '▲' },
-  { label: 'Tired', color: 'bg-indigo-200', icon: '○' },
-  { label: 'Excited', color: 'bg-pink-200', icon: '★' },
-  { label: 'Neutral', color: 'bg-green-200', icon: '—' }
+  { label: 'Happy', color: 'bg-yellow-200', icon: '😊' },
+  { label: 'Calm', color: 'bg-blue-200', icon: '😌' },
+  { label: 'Sad', color: 'bg-gray-200', icon: '😢' },
+  { label: 'Anxious', color: 'bg-purple-200', icon: '😟' },
+  { label: 'Angry', color: 'bg-red-200', icon: '😡' },
+  { label: 'Tired', color: 'bg-indigo-200', icon: '😴' },
+  { label: 'Excited', color: 'bg-pink-200', icon: '🤩' },
+  { label: 'Neutral', color: 'bg-green-200', icon: '🙂' }
 ]
 
 const MoodSelector = () => {
@@ -83,7 +83,7 @@ const MoodSelector = () => {
             
             <button
               type="submit"
-              className="pastel-button w-full"
+              className="pastel-button align-center justify-center text-black"
             >
               Save Mood Entry
             </button>

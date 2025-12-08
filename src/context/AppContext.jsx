@@ -15,7 +15,6 @@ export const AppProvider = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false)
   const [moodData, setMoodData] = useLocalStorage('moodData', [])
   const [journalEntries, setJournalEntries] = useLocalStorage('journalEntries', [])
-  const [chatMessages, setChatMessages] = useLocalStorage('chatMessages', [])
   const [meditationSessions, setMeditationSessions] = useLocalStorage('meditationSessions', [])
 
   const addMoodEntry = (mood, note) => {
@@ -39,16 +38,6 @@ export const AppProvider = ({ children }) => {
     setJournalEntries([...journalEntries, newEntry])
   }
 
-  const addChatMessage = (message, isUser = true) => {
-    const newMessage = {
-      id: Date.now(),
-      text: message,
-      isUser,
-      timestamp: new Date().getTime()
-    }
-    setChatMessages([...chatMessages, newMessage])
-  }
-
   const addMeditationSession = (duration) => {
     const newSession = {
       id: Date.now(),
@@ -61,10 +50,6 @@ export const AppProvider = ({ children }) => {
 
   const deleteJournalEntry = (id) => {
     setJournalEntries(journalEntries.filter(entry => entry.id !== id))
-  }
-
-  const clearChatMessages = () => {
-    setChatMessages([])
   }
 
   const getMoodStats = () => {
@@ -93,9 +78,6 @@ export const AppProvider = ({ children }) => {
     journalEntries,
     addJournalEntry,
     deleteJournalEntry,
-    chatMessages,
-    addChatMessage,
-    clearChatMessages,
     meditationSessions,
     addMeditationSession
   }
