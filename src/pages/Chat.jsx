@@ -113,7 +113,7 @@ const Chat = () => {
 
           <iframe
             id="botpress-iframe"
-            src="https://cdn.botpress.cloud/webchat/v3.4/shareable.html?configUrl=https://files.bpcontent.cloud/2025/12/07/16/20251207163304-B20VLPAU.json"
+            src="https://cdn.botpress.cloud/webchat/v3.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/12/07/16/20251207163304-B20VLPAU.json"
             className="w-full h-full border-0"
             title="AI Support Chat"
             onLoad={() => setIsLoaded(true)}

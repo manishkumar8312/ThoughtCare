@@ -47,7 +47,8 @@ body {
   display: block;
 
   /* 🌈 Add your gradient here */
-  background: linear-gradient(135deg, #e9d5ff, #c7d2fe);
+
+  background: linear-gradient(135deg, #d1fae5, #bae6fd, #e0e7ff);
   background-attachment: fixed;
   background-size: cover;
 }
