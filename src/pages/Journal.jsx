@@ -19,7 +19,7 @@ const Journal = () => {
         >
           <div className="flex items-center justify-center space-x-3">
             <BookOpen className="w-8 h-8 text-pastel-blue" />
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-pastel-blue to-pastel-green bg-clip-text text-transparent">
+            <h1 className="text-4xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
               Digital Journal
             </h1>
           </div>

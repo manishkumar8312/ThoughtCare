@@ -17,7 +17,7 @@ const MoodTracker = () => {
       >
         <div className="flex items-center justify-center space-x-3">
           <Brain className="w-8 h-8 text-pastel-purple" />
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-pastel-purple to-pastel-blue bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
             Mood Tracker
           </h1>
         </div>
