@@ -4,7 +4,7 @@ export const SAMPLE_RESOURCES = [
     title: 'Understanding Anxiety',
     type: 'article',
     description: 'Learn about the symptoms and coping strategies for anxiety.',
-    url: '#',
+    url: 'https://www.mind.org.uk/information-support/types-of-mental-health-problems/anxiety-and-panic-attacks/about-anxiety/',
     category: 'Anxiety'
   },
   {

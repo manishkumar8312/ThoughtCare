@@ -160,15 +160,6 @@ const SignUp = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="text-center"
           >
-            <p className="text-sm text-gray-800">
-              Already have an account?{' '}
-              <a 
-                href="/sign-in" 
-                className="text-indigo-700 hover:text-purple-700 transition-colors duration-300 font-bold underline decoration-2 underline-offset-2"
-              >
-                Sign in here
-              </a>
-            </p>
           </motion.div>
         </div>
       </motion.div>

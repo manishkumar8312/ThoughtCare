@@ -59,68 +59,16 @@ const Chat = () => {
         <div className="flex items-center justify-center space-x-3">
           <MessageCircle className="w-8 h-8 text-pastel-pink" />
           <h1 className="text-4xl font-bold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-            AI Support Chat
+            Experts Chat
           </h1>
         </div>
         <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-          Chat with our AI companion for emotional support and guidance.
-          I'm here to listen and help you navigate your feelings.
+          Chat with our Psychologists for emotional support and guidance.
+          They are here to listen and help you navigate your feelings.
         </p>
       </motion.div>
 
       {/* Chat Card */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="glass-card h-[600px] flex flex-col"
-      >
-        {/* Chat Header */}
-        <div className="flex items-center justify-between p-4 border-b border-white/20">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-pastel-pink to-pastel-purple flex items-center justify-center">
-              <Bot className="w-5 h-5 text-white" />
-            </div>
-            <div>
-              <h3 className="font-semibold text-gray-800">AI Assistant</h3>
-              <p className="text-xs text-gray-600">{isLoaded ? "Connected" : "Connecting..."}</p>
-            </div>
-          </div>
-
-          <button
-            onClick={handleClearChat}
-            className="p-2 rounded-lg text-gray-600 hover:text-red-500 hover:bg-red-50 transition-all duration-300"
-            title="Clear conversation"
-          >
-            <Trash2 className="w-4 h-4" />
-          </button>
-        </div>
-
-        {/* Chat Iframe */}
-        <div className="flex-1 relative">
-          {!isLoaded && (
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center space-y-4 bg-white/80 backdrop-blur-sm z-10">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-r from-pastel-pink to-pastel-purple flex items-center justify-center">
-                <Sparkles className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-800">Connecting to AI Assistant…</h3>
-              <div className="inline-flex items-center space-x-2 text-sm text-pastel-purple">
-                <div className="w-2 h-2 bg-pastel-purple rounded-full animate-pulse" />
-                <span>Loading...</span>
-              </div>
-            </div>
-          )}
-
-          <iframe
-            id="botpress-iframe"
-            src="https://cdn.botpress.cloud/webchat/v3.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/12/07/16/20251207163304-B20VLPAU.json"
-            className="w-full h-full border-0"
-            title="AI Support Chat"
-            onLoad={() => setIsLoaded(true)}
-            allow="microphone; clipboard-read; clipboard-write"
-          ></iframe>
-        </div>
-      </motion.div>
 
       {/* Features */}
       <motion.div

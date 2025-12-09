@@ -116,7 +116,10 @@ const Resources = () => {
               <span className={`text-xs px-3 py-1 rounded-full bg-gradient-to-r ${getCategoryColor(resource.category)} text-white`}>
                 {resource.category}
               </span>
-              <button className="text-sm text-pastel-purple hover:text-pastel-pink transition-colors duration-300 font-medium">
+              <button 
+                onClick={() => window.open(resource.url, '_blank')}
+                className="text-sm text-pastel-purple hover:text-pastel-pink transition-colors duration-300 font-medium"
+              >
                 Read More →
               </button>
             </div>
