@@ -67,7 +67,7 @@ const Navbar = () => {
               to={link.path}
               className={`
                 group flex items-center gap-2 text-sm font-medium transition-all duration-300
-                ${isScrolled ? "text-gray-700" : "text-white"}
+                text-black
                 ${isActive ? "text-purple-600 font-semibold" : ""}
               `}
             >
@@ -87,10 +87,7 @@ const Navbar = () => {
         <button
           className={`
             border px-4 py-1 rounded-full text-sm transition-all
-            ${isScrolled
-              ? "border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white"
-              : "border-white text-white hover:bg-white/70 hover:text-purple-600"
-            }
+            border-purple-600 text-black hover:bg-purple-600 hover:text-white
           `}
         >
           New Features
@@ -101,7 +98,7 @@ const Navbar = () => {
       <div className="hidden md:flex items-center gap-4">
         <Search
           className={`h-5 w-6 cursor-pointer transition-all duration-300
-            ${isScrolled ? "text-gray-700" : "text-white"}
+            text-black
           `}
         />
         <AuthButton isMobile={false} />
@@ -111,14 +108,14 @@ const Navbar = () => {
       <div className="flex items-center gap-3 md:hidden">
         <Search
           className={`h-5 w-6 transition-all duration-300
-            ${isScrolled ? "text-gray-700" : "text-white"}
+            text-black
           `}
         />
 
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className={`transition-all duration-300
-            ${isScrolled ? "text-gray-700" : "text-white"}
+            text-black
           `}
         >
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -158,7 +155,7 @@ const Navbar = () => {
               to={link.path}
               onClick={() => setIsMenuOpen(false)}
               className={`flex items-center gap-3 text-lg transition-all
-                ${isActive ? "text-purple-600 font-semibold" : "text-gray-700"}
+                ${isActive ? "text-purple-600 font-semibold" : "text-black"}
               `}
             >
               <Icon className="w-5 h-5" />
