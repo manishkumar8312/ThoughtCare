@@ -102,8 +102,7 @@ thoughtcare/
 │   │   ├── JournalEditor.jsx
 │   │   ├── MeditationTimer.jsx
 │   │   ├── BreathingAnimation.jsx
-│   │   ├── ChatBubble.jsx
-│   │   └── ChatInput.jsx
+│   │   └── Chat.jsx
 │   ├── pages/
 │   │   ├── Home.jsx
 │   │   ├── MoodTracker.jsx
