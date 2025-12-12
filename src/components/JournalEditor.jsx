@@ -94,7 +94,7 @@ const JournalEditor = () => {
             <button
               onClick={handleSave}
               disabled={!content.trim()}
-              className="pastel-button inline-flex items-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="bg-green-500 hover:bg-green-600 text-white inline-flex items-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed px-4 py-2 rounded-full transition-colors"
             >
               <Save className="w-4 h-4" />
               <span>Save Entry</span>

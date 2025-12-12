@@ -24,7 +24,7 @@ const Navbar = () => {
     { name: 'Mood', path: '/mood-tracker', icon: Activity },
     { name: 'Journal', path: '/journal', icon: BookOpen },
     { name: 'Meditate', path: '/meditation', icon: Headphones },
-    { name: 'Chat', path: '/chat', icon: MessageCircle },
+    { name: 'Connect', path: '/chat', icon: MessageCircle },
     { name: 'About', path: '/resources', icon: Library }
   ]
 
