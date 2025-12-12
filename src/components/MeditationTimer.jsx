@@ -109,7 +109,7 @@ const MeditationTimer = () => {
       <div className="text-center space-y-4">
         <div className="flex items-center justify-center space-x-2 text-gray-600">
           <Clock className="w-5 h-5" />
-          <span className="text-sm">Meditation Timer</span>
+          <span className="text-xl font-bold text-gray-800">Meditation Timer</span>
         </div>
         
         <motion.div
