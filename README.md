@@ -29,6 +29,8 @@ ThoughtCare is a comprehensive mental health tracking and wellness application b
 
 ---
 
+
+
 ## Installation
 
 ### Prerequisites
